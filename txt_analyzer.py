@@ -6,8 +6,7 @@ The average word length is 5
 
 def main(file_name):
     txt_file_object = open(file_name, 'r')
-    all_text_lstOfLines = txt_file_object.readlines()   # takes the whole text and creates a list where each position
-                                                        # is a line
+    all_text_lstOfLines = txt_file_object.readlines()   # takes the whole text and creates a list where each position is a line
     data = get_data(all_text_lstOfLines)
     print('The average word length is %5.3f' % (data[1]))   # data[1] is average_size
     print('Word usage is as follows %s' % (data[0]))        # data[0] is word_count_dic
