@@ -7,6 +7,7 @@ analyze a text file and then print:
 - the longest word in the document
 - the average size of each word'''
 
+import re
 
 def main(file_name):
     txt_file_object = open(file_name, 'r')
@@ -24,10 +25,9 @@ def get_data(all_text_lstOfLines):
     longest_word = ""
     word_count_dic = {}
     for line in all_text_lstOfLines:
-        line = line.strip() # removes white space and newline characters
+        line = re.sub(r'[^\w\s]','',line) # removes white space, punctuation, and newline characters
         word_list = line.split()    # word_list is a list with each word of the line in its own position
         for word in word_list:
-            word = word.strip(',.:?!;')  # removes all specified characters
             count += 1
             total_size += int(len(word))
             if len(word) > len(longest_word):
