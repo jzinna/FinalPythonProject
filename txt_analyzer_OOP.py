@@ -6,14 +6,14 @@ The average word length is 5
 
 from collections import UserDict
 
-
+'''
 class CommonWords(UserDict):
    # five_most_used={}
     def __init__(self,word):
         #super().__init__()
         super(CommonWords, self).__init__()
         #self.data
-
+'''
 '''   def append(self,word):
       if word in self:
          pass
@@ -37,6 +37,10 @@ def main(file_name):
         
 '''
 
+class Words:
+   def __init__(self,word):
+      self.wrd=word
+   
 
 def main(file_name):
     txt_file_object = open(file_name, 'r')
